@@ -1,19 +1,28 @@
 <html>
 	<head>
-
+		<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+		
+	
+		<!-- TODO: Add SDKs for Firebase products that you want to use-->
+		<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 
 	<body>
 		<h1>Pick List</h1>
-	</body>
+		<div class="content">
+
+            <form id="add-pickList-form"></form>
+
+            <ul id="pick-list"></ul>
+
+        </div>
+
+	
 
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use-->
-	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
 
 	<script>
 	  // Your web app's Firebase configuration
@@ -35,5 +44,5 @@
 	</script>
 	
 	<script src="script.js"></script>
-
+</body>
 </html>
