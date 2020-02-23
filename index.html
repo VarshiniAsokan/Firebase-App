@@ -1,0 +1,39 @@
+<html>
+	<head>
+
+	</head>
+
+	<body>
+		<h1>Pick List</h1>
+	</body>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use-->
+	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyAn8zRme2O_El-CkvCjxkFS3HzsBxlA84M",
+		authDomain: "material-picking.firebaseapp.com",
+		databaseURL: "https://material-picking.firebaseio.com",
+		projectId: "material-picking",
+		storageBucket: "material-picking.appspot.com",
+		messagingSenderId: "527648084012",
+		appId: "1:527648084012:web:ce1f042557a0372db80189",
+		measurementId: "G-23267FN9QW"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  const db = firebase.firestore();
+	 //The timestampsInSnapshots is true by default. No need to call the function
+	 // db.settings({ timestampsInSnapshots: true }); 
+	</script>
+	
+	<script src="script.js"></script>
+
+</html>
