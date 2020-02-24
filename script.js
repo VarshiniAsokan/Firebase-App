@@ -1,5 +1,6 @@
 
 const pickList = document.querySelector('#pick-list');
+const form = document.querySelector('#add-picklist-form');
 
 // create element & render cafe
 function renderPickList(doc){
@@ -25,3 +26,12 @@ db.collection('Picklist').get().then((snapshot)=> {
 	})
 })
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  db.collection('Picklist').add({
+      ['Part ID']: form.partid.value,
+      Quantity: form.quantity.value
+  });
+  form.partid.value = '';
+  form.quantity.value = '';
+});
