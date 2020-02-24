@@ -11,8 +11,8 @@ function renderPickList(doc){
     quantity.textContent = doc.data().Quantity;
     partId.textContent = doc.data()['Part ID'];
 
-    li.appendChild(quantity);
     li.appendChild(partId);
+    li.appendChild(quantity);
 
   pickList.appendChild(li);
 }
