@@ -32,23 +32,24 @@ li{
     color: #555;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
-    height: 46px;
+    height: auto;
 }
-
+/*
 li:nth-child(even){
     padding: 20px;
     background: #f2f2f2;
 }
-
-li span{
-    display: block;
-}
-
 li span:nth-child(2){
     font-size: 16px;
     margin-top: 6px;
     color: #999;
 }
+*/
+li span{
+    display: inline-block;
+    padding: 5%;
+}
+
 
 li div{
     position: absolute;
@@ -64,7 +65,7 @@ li div{
 
 form input{
     float: left;
-    width: 38%;
+    width: auto;
     margin: 0;
     border: 0;
     border-bottom: 1px solid #eee;
@@ -92,11 +93,12 @@ button{
     border: 0;
     background: #fff;
     border-radius: 10px;
+    background-color: #eab0dc;
     padding: 13px;
-    width: 14%;
+    width: auto;
     box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
     font-weight: bold;
-    font-family: ubuntu;
     letter-spacing: 1px;
-    color: #999;
+    /*font-family: ubuntu;
+    color: #999;*/
 }

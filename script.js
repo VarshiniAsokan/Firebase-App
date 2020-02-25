@@ -9,11 +9,14 @@ function renderPickList(doc){
     let li = document.createElement('li');
     let quantity = document.createElement('span');
     let partId = document.createElement('span');
+    let userId = document.createElement('span');
 
     li.setAttribute('data-id', doc.id);
     quantity.textContent = doc.data().Quantity;
     partId.textContent = doc.data()['Part ID'];
+    userId.textContent = doc.data().UserID;
 
+    li.appendChild(userId);
     li.appendChild(partId);
     li.appendChild(quantity);
 
@@ -28,7 +31,7 @@ function renderPickList(doc){
 // 	})
 // })
 
-db.collection('Picklist').orderBy('Quantity').get().then((snapshot)=> {
+db.collection('Picklist').orderBy('UserID').get().then((snapshot)=> {
 	console.log(snapshot.docs);
 	snapshot.docs.forEach(doc =>{
 		console.log(doc.data());
@@ -43,15 +46,14 @@ searchForm.addEventListener('submit', (e) => {
     pickList.removeChild(child); 
       child = pickList.lastElementChild; 
   } ;
-  db.collection('Picklist').where('Part ID','==',searchForm.partid.value).orderBy('Quantity').get().then((snapshot)=> {
+  db.collection('Picklist').where('UserID','==',searchForm.search-userid.value).get().then((snapshot)=> {
     console.log(snapshot.docs);
     snapshot.docs.forEach(doc =>{
       console.log(doc.data());
       renderPickList(doc);
     })
   })
-  form.partid.value = '';
-  form.quantity.value = '';
+  searchForm.userid.value = '';
 });
 
 
@@ -59,8 +61,10 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   db.collection('Picklist').add({
       ['Part ID']: form.partid.value,
-      Quantity: form.quantity.value
+      Quantity: form.quantity.value,
+      UserID: form.userid.value
   });
   form.partid.value = '';
   form.quantity.value = '';
+  form.userid.value = '';
 });
