@@ -18,7 +18,7 @@ function renderPickList(doc){
   pickList.appendChild(li);
 }
 
-db.collection('Picklist').where('Quantity','>','100').get().then((snapshot)=> {
+db.collection('Picklist').where('Quantity','==','50').get().then((snapshot)=> {
 	console.log(snapshot.docs);
 	snapshot.docs.forEach(doc =>{
 		console.log(doc.data());
