@@ -31,30 +31,34 @@ function renderPickList(doc){
 // 	})
 // })
 
-db.collection('Picklist').orderBy('UserID').get().then((snapshot)=> {
+db.collection('Picklist').get().then((snapshot)=> {
 	console.log(snapshot.docs);
 	snapshot.docs.forEach(doc =>{
 		console.log(doc.data());
 		renderPickList(doc);
 	})
 })
+console.log(searchForm.searchuserid);
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  var child = pickList.lastElementChild;  
+  var child = pickList.lastElementChild; 
   while (child) { 
     pickList.removeChild(child); 
+    
+    console.log(pickList.lastElementChild); 
       child = pickList.lastElementChild; 
-  } ;
-  db.collection('Picklist').where('UserID','==',searchForm.search-userid.value).get().then((snapshot)=> {
+  };
+  db.collection('Picklist').where('UserID','==',searchForm.searchuserid.value).get().then((snapshot)=> {
     console.log(snapshot.docs);
     snapshot.docs.forEach(doc =>{
       console.log(doc.data());
       renderPickList(doc);
     })
   })
-  searchForm.userid.value = '';
+  searchForm.searchuserid.value = '';
 });
+
 
 
 form.addEventListener('submit', (e) => {
